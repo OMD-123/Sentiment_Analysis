@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const predictController_1 = require("../controllers/predictController");
+const upload_1 = require("../middleware/upload");
+const auth_1 = require("../middleware/auth");
+const router = (0, express_1.Router)();
+router.post("/text", auth_1.optionalAuth, predictController_1.predictText);
+router.post("/image", auth_1.optionalAuth, upload_1.upload.single("file"), predictController_1.predictImage);
+router.post("/audio", auth_1.optionalAuth, upload_1.upload.single("file"), predictController_1.predictAudio);
+router.post("/multimodal", auth_1.optionalAuth, upload_1.upload.fields([{ name: "image", maxCount: 1 }, { name: "audio", maxCount: 1 }]), predictController_1.predictMultimodal);
+router.get("/history", auth_1.optionalAuth, predictController_1.getHistory);
+router.delete("/history/:id", auth_1.verifyToken, predictController_1.deleteHistoryItem);
+exports.default = router;

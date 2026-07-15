@@ -1,0 +1,63 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: mern_sentiment_mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: mern_sentiment
+
+  ml-service:
+    build:
+      context: .
+      dockerfile: ml/Dockerfile
+    container_name: mern_sentiment_ml
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./datasets:/app/datasets
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=8000
+
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: mern_sentiment_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+      - ml-service
+    environment:
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongodb:27017/mern_sentiment
+      - ML_SERVICE_URL=http://ml-service:8000
+      - JWT_SECRET=production_docker_jwt_secret_key_2026
+      - NODE_ENV=production
+    volumes:
+      - ./uploads:/app/uploads
+      - ./models/reports:/app/models/reports
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: mern_sentiment_frontend
+    restart: always
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
