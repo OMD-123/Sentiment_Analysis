@@ -1,0 +1,234 @@
+{
+  "User": [],
+  "PredictionHistory": [
+    {
+      "_id": "6a574256738ce59b1e82e7cf",
+      "id": "6a574256738ce59b1e82e7cf",
+      "modality": "multimodal",
+      "inputs": {
+        "text": "Super excited for our new multimodal architecture release!"
+      },
+      "sentiment": "Positive",
+      "confidence": 0.985,
+      "probabilityScores": {
+        "Negative": 0.005,
+        "Neutral": 0.01,
+        "Positive": 0.985
+      },
+      "modalityScores": {
+        "text": {
+          "sentiment": "Positive",
+          "confidence": 0.99,
+          "probability_scores": {
+            "Negative": 0.003,
+            "Neutral": 0.007,
+            "Positive": 0.99
+          }
+        }
+      },
+      "attentionWeights": {
+        "text": 0.45,
+        "image": 0.3,
+        "audio": 0.25
+      },
+      "createdAt": "2026-07-15T08:18:30.187Z",
+      "updatedAt": "2026-07-15T08:18:30.187Z"
+    },
+    {
+      "_id": "6a574256738ce59b1e82e7d0",
+      "id": "6a574256738ce59b1e82e7d0",
+      "modality": "text",
+      "inputs": {
+        "text": "The app crashed again right before the deadline. Totally unacceptable."
+      },
+      "sentiment": "Negative",
+      "confidence": 0.962,
+      "probabilityScores": {
+        "Negative": 0.962,
+        "Neutral": 0.025,
+        "Positive": 0.013
+      },
+      "createdAt": "2026-07-15T08:18:30.188Z",
+      "updatedAt": "2026-07-15T08:18:30.188Z"
+    },
+    {
+      "_id": "6a574256738ce59b1e82e7d1",
+      "id": "6a574256738ce59b1e82e7d1",
+      "modality": "image",
+      "inputs": {
+        "imagePath": "sample_sunshine.jpg"
+      },
+      "sentiment": "Positive",
+      "confidence": 0.941,
+      "probabilityScores": {
+        "Negative": 0.02,
+        "Neutral": 0.039,
+        "Positive": 0.941
+      },
+      "createdAt": "2026-07-15T08:18:30.188Z",
+      "updatedAt": "2026-07-15T08:18:30.188Z"
+    },
+    {
+      "_id": "6a574256738ce59b1e82e7d2",
+      "id": "6a574256738ce59b1e82e7d2",
+      "modality": "audio",
+      "inputs": {
+        "audioPath": "sample_speech.wav"
+      },
+      "sentiment": "Neutral",
+      "confidence": 0.892,
+      "probabilityScores": {
+        "Negative": 0.06,
+        "Neutral": 0.892,
+        "Positive": 0.048
+      },
+      "createdAt": "2026-07-15T08:18:30.188Z",
+      "updatedAt": "2026-07-15T08:18:30.188Z"
+    },
+    {
+      "_id": "6a574256738ce59b1e82e7d3",
+      "id": "6a574256738ce59b1e82e7d3",
+      "modality": "multimodal",
+      "inputs": {
+        "text": "Meeting scheduled for 10 AM tomorrow in Conference Room B."
+      },
+      "sentiment": "Neutral",
+      "confidence": 0.978,
+      "probabilityScores": {
+        "Negative": 0.01,
+        "Neutral": 0.978,
+        "Positive": 0.012
+      },
+      "attentionWeights": {
+        "text": 0.6,
+        "image": 0.2,
+        "audio": 0.2
+      },
+      "createdAt": "2026-07-15T08:18:30.188Z",
+      "updatedAt": "2026-07-15T08:18:30.188Z"
+    },
+    {
+      "_id": "6a574256738ce59b1e82e7d4",
+      "id": "6a574256738ce59b1e82e7d4",
+      "modality": "text",
+      "inputs": {
+        "text": "I absolutely love the clean UI and super fast response times!"
+      },
+      "sentiment": "Positive",
+      "confidence": 0.991,
+      "probabilityScores": {
+        "Negative": 0.004,
+        "Neutral": 0.005,
+        "Positive": 0.991
+      },
+      "createdAt": "2026-07-15T08:18:30.189Z",
+      "updatedAt": "2026-07-15T08:18:30.189Z"
+    },
+    {
+      "_id": "6a574257738ce59b1e82e7d7",
+      "id": "6a574257738ce59b1e82e7d7",
+      "modality": "text",
+      "inputs": {
+        "text": "I absolutely love this new multimodal system! Highest practical accuracy and super clean architecture!"
+      },
+      "sentiment": "Positive",
+      "confidence": 0.9997026324272156,
+      "probabilityScores": {
+        "Negative": 0.00015094337868504226,
+        "Neutral": 0.00014633798855356872,
+        "Positive": 0.9997026324272156
+      },
+      "createdAt": "2026-07-15T08:18:31.712Z",
+      "updatedAt": "2026-07-15T08:18:31.712Z"
+    },
+    {
+      "_id": "6a5743ed5d4d47b45092ecde",
+      "id": "6a5743ed5d4d47b45092ecde",
+      "modality": "multimodal",
+      "inputs": {
+        "text": "Super excited for our final year engineering project!"
+      },
+      "sentiment": "Neutral",
+      "confidence": 0.5057872533798218,
+      "probabilityScores": {
+        "Negative": 0.13910691440105438,
+        "Neutral": 0.5057872533798218,
+        "Positive": 0.3551058769226074
+      },
+      "modalityScores": {
+        "text": {
+          "sentiment": "Positive",
+          "confidence": 0.4585173428058624,
+          "probability_scores": {
+            "Negative": 0.10153194516897202,
+            "Neutral": 0.4399506449699402,
+            "Positive": 0.4585173428058624
+          }
+        }
+      },
+      "attentionWeights": {
+        "text": 1,
+        "image": 0,
+        "audio": 0
+      },
+      "createdAt": "2026-07-15T08:25:17.730Z",
+      "updatedAt": "2026-07-15T08:25:17.730Z"
+    }
+  ],
+  "UploadedFile": [],
+  "Log": [
+    {
+      "_id": "6a574256738ce59b1e82e7d6",
+      "id": "6a574256738ce59b1e82e7d6",
+      "level": "info",
+      "action": "SYSTEM_STARTUP",
+      "message": "Seeded initial demonstration history and analytics.",
+      "createdAt": "2026-07-15T08:18:30.189Z",
+      "updatedAt": "2026-07-15T08:18:30.189Z"
+    },
+    {
+      "_id": "6a574257738ce59b1e82e7d8",
+      "id": "6a574257738ce59b1e82e7d8",
+      "level": "info",
+      "action": "PREDICT_TEXT",
+      "message": "Analyzed text with Positive sentiment (100.0%)",
+      "meta": {
+        "historyId": "6a574257738ce59b1e82e7d7"
+      },
+      "createdAt": "2026-07-15T08:18:31.713Z",
+      "updatedAt": "2026-07-15T08:18:31.713Z"
+    },
+    {
+      "_id": "6a5743ed5d4d47b45092ecdf",
+      "id": "6a5743ed5d4d47b45092ecdf",
+      "level": "info",
+      "action": "PREDICT_MULTIMODAL",
+      "message": "Analyzed multimodal inputs with Neutral sentiment (50.6%)",
+      "meta": {
+        "historyId": "6a5743ed5d4d47b45092ecde"
+      },
+      "createdAt": "2026-07-15T08:25:17.730Z",
+      "updatedAt": "2026-07-15T08:25:17.730Z"
+    }
+  ],
+  "Analytics": [
+    {
+      "_id": "6a574256738ce59b1e82e7d5",
+      "id": "6a574256738ce59b1e82e7d5",
+      "date": "2026-07-15",
+      "totalPredictions": 8,
+      "positiveCount": 4,
+      "negativeCount": 1,
+      "neutralCount": 3,
+      "modalityCounts": {
+        "text": 3,
+        "image": 1,
+        "audio": 1,
+        "multimodal": 3
+      },
+      "avgConfidence": 0.9066862357258796,
+      "createdAt": "2026-07-15T08:18:30.189Z",
+      "updatedAt": "2026-07-15T08:25:17.730Z"
+    }
+  ]
+}
