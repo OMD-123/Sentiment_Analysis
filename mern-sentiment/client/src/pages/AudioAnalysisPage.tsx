@@ -47,7 +47,7 @@ export const AudioAnalysisPage: React.FC = () => {
           Audio Waveform & Mel-Spectrogram Sentiment
         </h2>
         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-          Analyzes acoustic dynamics and frequency spectrum features using our 2D-CNN speech emotion recognizer.
+          Analyzes acoustic dynamics and frequency spectrum features using our 2D-CNN speech emotion recognizer, fine-tuned on the RAVDESS corpus.
         </p>
       </div>
 

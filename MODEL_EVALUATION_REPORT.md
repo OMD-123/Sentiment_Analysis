@@ -1,7 +1,7 @@
 # Multimodal Sentiment Analysis - Model Evaluation Report
 
 ## Executive Summary
-This report summarizes the performance of unimodal and multimodal attention-based fusion architectures trained on social media big data (`CardiffNLP TweetEval`, `MVSA-Single Image Sentiment`, and `Speech Emotion Recognition`).
+This report summarizes the performance of unimodal and multimodal attention-based fusion architectures trained on social media big data (`CardiffNLP TweetEval`, `FI (Flickr & Instagram) Emotion Dataset`, and the `RAVDESS` speech emotion corpus).
 
 ## Evaluation Metrics Summary
 

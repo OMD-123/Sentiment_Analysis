@@ -33,7 +33,12 @@ class PrecachedMultimodalDataset(Dataset):
             t_sub = text_df[text_df["label"] == label].reset_index(drop=True)
             i_sub = image_df[image_df["label"] == label].reset_index(drop=True)
             a_sub = audio_df[audio_df["label"] == label].reset_index(drop=True)
-            
+
+            if min(len(t_sub), len(i_sub), len(a_sub)) == 0:
+                print(f"[Multimodal] Skipping label {label} for pairing: "
+                      f"insufficient per-modality samples (text={len(t_sub)}, image={len(i_sub)}, audio={len(a_sub)}).")
+                continue
+
             n = min(len(t_sub), len(i_sub), len(a_sub)) if not is_train else max(len(t_sub), min(len(i_sub), len(a_sub)))
             if max_samples and n > (max_samples // 3):
                 n = max_samples // 3

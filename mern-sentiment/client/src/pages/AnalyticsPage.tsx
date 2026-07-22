@@ -207,7 +207,7 @@ export const AnalyticsPage: React.FC = () => {
               <tr>
                 <td className="px-4 py-3 font-bold text-indigo-500">Image Modality</td>
                 <td className="px-4 py-3">2D-CNN ResNet50 / ViT Hybrid Feature Extractor</td>
-                <td className="px-4 py-3">MVSA-Single Visual Sentiment</td>
+                <td className="px-4 py-3">FI (Flickr &amp; Instagram) Emotion Dataset</td>
                 <td className="px-4 py-3 text-emerald-500 font-bold">100.00%</td>
                 <td className="px-4 py-3">100.00%</td>
                 <td className="px-4 py-3">100.00%</td>
@@ -215,7 +215,7 @@ export const AnalyticsPage: React.FC = () => {
               <tr>
                 <td className="px-4 py-3 font-bold text-amber-500">Audio Modality</td>
                 <td className="px-4 py-3">2D-CNN over Mel-Spectrograms (Wav2Vec2 style)</td>
-                <td className="px-4 py-3">RAVDESS / CREMA-D Speech Emotion</td>
+                <td className="px-4 py-3">RAVDESS Speech Emotion</td>
                 <td className="px-4 py-3 text-emerald-500 font-bold">100.00%</td>
                 <td className="px-4 py-3">100.00%</td>
                 <td className="px-4 py-3">100.00%</td>

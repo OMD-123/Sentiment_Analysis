@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# Multimodal Sentiment Analysis - Git ignore rules
+# ---------------------------------------------------------------------------
+
+# Python bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Cached benchmark datasets (regenerate via scripts/download-datasets.sh) ---
+# FI (Flickr & Instagram) extracted corpus, archives and manifest
+datasets/images/FI/
+datasets/images/fi/
+datasets/images/FI_dataset/
+datasets/images/archives/
+datasets/images/dataset.csv
+# RAVDESS extracted corpus, archives and manifest
+datasets/audio/RAVDESS/
+datasets/audio/*.zip
+datasets/audio/dataset.csv
+# Synthetic offline fallbacks (regenerated automatically when needed)
+datasets/images/class_*/
+datasets/audio/class_*/
+# Extracted mel-spectrogram cache
+datasets/**/*.mel.npy
+# Hugging Face / torch hub caches
+datasets/.cache/
+.cache/
+
+# Runtime artifacts
+*.log
+fastapi.log
+express.log
+uploads/
+
+# Dependencies & build outputs (kept for future safety)
+node_modules/
+client/dist/
+server/dist/
+
+# Local environment
+.env
+venv/
+.venv/
