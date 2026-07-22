@@ -118,14 +118,24 @@ Every cached `dataset.csv` is stamped with a `source` column (`FI`, `RAVDESS`, `
 
 ## 📊 Model Evaluation Performance
 
-Summary of test set evaluation achieved across modalities (`CardiffNLP TweetEval`, `FI (Flickr & Instagram)`, `RAVDESS`):
+Test-set evaluation of the checkpoints currently bundled in this repository (`CardiffNLP TweetEval` text, `FI (Flickr & Instagram)` images, `RAVDESS` audio):
 
 | Modality / Architecture | Accuracy | Macro Precision | Macro Recall | Macro F1 | Weighted F1 |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Text Modality** (`1D-Transformer Encoder`) | **100.00%** | 100.00% | 100.00% | 100.00% | 100.00% |
 | **Image Modality** (`ResNet50 / ViT Hybrid`) | **100.00%** | 100.00% | 100.00% | 100.00% | 100.00% |
-| **Audio Modality** (`2D-CNN Mel-Spectrogram`) | **100.00%** | 100.00% | 100.00% | 100.00% | 100.00% |
+| **Audio Modality** (`2D-CNN Mel-Spectrogram`) | **40.58%** | 39.95% | 40.58% | 29.32% | 29.32% |
 | **Multimodal Fusion** (`Attention + Gated Late Fusion`) | **100.00%** | 100.00% | 100.00% | 100.00% | 100.00% |
+
+> **How to read this table**: the bundled checkpoints were smoke-trained on CPU.
+> The audio model is trained on the **full, real RAVDESS corpus** (1,440 clips),
+> so its score reflects a compact CPU-only CNN trained for a handful of epochs —
+> expect substantially higher numbers after longer training on a GPU.
+> Text/image still run on their offline fallback subsets in sandboxed
+> environments; once the FI archive is placed under `datasets/images/FI/` they
+> train on real images too, and the metric becomes the true benchmark score.
+> `models/reports/` and `MODEL_EVALUATION_REPORT.md` are regenerated from the
+> measured data on every run of `training/evaluate_all.py`.
 
 All visual evaluation plots (`confusion_matrix_text_modality.png`, `roc_curve_multimodal_fusion.png`, `loss_curves_all.png`) are saved inside `models/reports/` and served dynamically on the dashboard.
 

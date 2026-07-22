@@ -185,8 +185,8 @@ def main():
         ("Multimodal Fusion", f_preds, f_probs)
     ]:
         acc = accuracy_score(y_true, preds)
-        prec, rec, f1, _ = precision_recall_fscore_support(y_true, preds, average="macro")
-        w_prec, w_rec, w_f1, _ = precision_recall_fscore_support(y_true, preds, average="weighted")
+        prec, rec, f1, _ = precision_recall_fscore_support(y_true, preds, average="macro", zero_division=0)
+        w_prec, w_rec, w_f1, _ = precision_recall_fscore_support(y_true, preds, average="weighted", zero_division=0)
         cm = confusion_matrix(y_true, preds, labels=[0, 1, 2])
         
         metrics_summary[name] = {

@@ -554,7 +554,11 @@ def _load_synthetic_image_fallback(img_dir: Path, num_samples_per_class: int) ->
     df = pd.DataFrame(data)
     df.to_csv(img_dir / "dataset.csv", index=False)
     logger.info(f"Created/verified synthetic image placeholder set: {len(df)} images.")
-    return df
+    return {
+        "train": df[df["split"] == "train"].reset_index(drop=True),
+        "val": df[df["split"] == "val"].reset_index(drop=True),
+        "test": df[df["split"] == "test"].reset_index(drop=True),
+    }
 
 
 def load_image_dataset(num_samples_per_class: int = 150) -> Dict[str, pd.DataFrame]:
@@ -771,7 +775,11 @@ def _load_synthetic_audio_fallback(audio_dir: Path, num_samples_per_class: int) 
     df = pd.DataFrame(data)
     df.to_csv(audio_dir / "dataset.csv", index=False)
     logger.info(f"Created/verified synthetic audio placeholder set: {len(df)} clips.")
-    return df
+    return {
+        "train": df[df["split"] == "train"].reset_index(drop=True),
+        "val": df[df["split"] == "val"].reset_index(drop=True),
+        "test": df[df["split"] == "test"].reset_index(drop=True),
+    }
 
 
 def load_audio_dataset(num_samples_per_class: int = 150) -> Dict[str, pd.DataFrame]:
