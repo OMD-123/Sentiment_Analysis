@@ -52,13 +52,13 @@
     ]
   },
   "Audio Modality": {
-    "accuracy": 1.0,
-    "macro_precision": 1.0,
-    "macro_recall": 1.0,
-    "macro_f1": 1.0,
-    "weighted_precision": 1.0,
-    "weighted_recall": 1.0,
-    "weighted_f1": 1.0,
+    "accuracy": 0.4057971014492754,
+    "macro_precision": 0.3994708994708995,
+    "macro_recall": 0.4057971014492754,
+    "macro_f1": 0.29323710237904305,
+    "weighted_precision": 0.3994708994708995,
+    "weighted_recall": 0.4057971014492754,
+    "weighted_f1": 0.29323710237904305,
     "confusion_matrix": [
       [
         23,
@@ -66,14 +66,14 @@
         0
       ],
       [
-        0,
-        23,
+        18,
+        5,
         0
       ],
       [
-        0,
-        0,
-        23
+        22,
+        1,
+        0
       ]
     ]
   },

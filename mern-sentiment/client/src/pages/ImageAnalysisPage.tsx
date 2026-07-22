@@ -47,7 +47,7 @@ export const ImageAnalysisPage: React.FC = () => {
           Social Media Image Sentiment Analysis
         </h2>
         <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-          Fine-tuned CNN/ViT architecture trained on MVSA-Single visual sentiment patterns.
+          Fine-tuned CNN/ViT architecture trained on the FI (Flickr &amp; Instagram) visual emotion dataset.
         </p>
       </div>
 

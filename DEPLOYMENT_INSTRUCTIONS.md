@@ -28,7 +28,12 @@ Run the automated dataset download and verification script:
 ```bash
 ./scripts/download-datasets.sh
 ```
-*Note: If external Hugging Face domains are unreachable, this script automatically switches to generating clean, highly verified public benchmark datasets.*
+This resolves the real benchmark corpora:
+- **Text**: CardiffNLP TweetEval (automatic, Hugging Face Hub)
+- **Image**: FI (Flickr & Instagram) Emotion Dataset — place the extracted archive under `mern-sentiment/datasets/images/FI/` (see `mern-sentiment/datasets/README.md` for exact folder layout and re-host options)
+- **Audio**: RAVDESS speech emotion corpus (automatic, downloaded from Zenodo)
+
+*Note: If external domains are unreachable, the loaders transparently fall back to clearly-marked synthetic placeholders so the pipeline can still execute end-to-end offline.*
 
 ### Step 3: Train & Evaluate Multimodal Models
 To train every modality (`Text`, `Image`, `Audio`) plus the `Attention Fusion Network` and generate evaluation reports:

@@ -56,7 +56,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab }) => 
           <span className="text-xs font-bold text-gray-800 dark:text-gray-200">State-of-the-Art Models</span>
         </div>
         <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-relaxed">
-          Trained with PyTorch on CardiffNLP TweetEval, MVSA-Single, and Speech Emotion datasets.
+          Trained with PyTorch on CardiffNLP TweetEval, FI (Flickr &amp; Instagram), and RAVDESS Speech Emotion datasets.
         </p>
       </div>
     </aside>

@@ -44,9 +44,14 @@ def plot_confusion_matrix(cm: np.ndarray, title: str, filename: str):
 def plot_roc_curve(y_true: np.ndarray, y_probs: np.ndarray, title: str, filename: str):
     plt.figure(figsize=(7, 6))
     y_bin = label_binarize(y_true, classes=[0, 1, 2])
+    if y_bin.shape[1] < 3:
+        y_bin = np.hstack([y_bin, np.zeros((len(y_bin), 3 - y_bin.shape[1]))])
     colors = ["red", "blue", "green"]
-    
+
     for i, color in zip(range(3), colors):
+        if np.unique(y_bin[:, i]).size < 2:
+            plt.plot([], [], color=color, lw=2, label=f"{LABEL_NAMES[i]} (no test samples)")
+            continue
         fpr, tpr, _ = roc_curve(y_bin[:, i], y_probs[:, i])
         roc_auc = auc(fpr, tpr)
         plt.plot(fpr, tpr, color=color, lw=2, label=f"{LABEL_NAMES[i]} (AUC = {roc_auc:.3f})")
@@ -180,9 +185,9 @@ def main():
         ("Multimodal Fusion", f_preds, f_probs)
     ]:
         acc = accuracy_score(y_true, preds)
-        prec, rec, f1, _ = precision_recall_fscore_support(y_true, preds, average="macro")
-        w_prec, w_rec, w_f1, _ = precision_recall_fscore_support(y_true, preds, average="weighted")
-        cm = confusion_matrix(y_true, preds)
+        prec, rec, f1, _ = precision_recall_fscore_support(y_true, preds, average="macro", zero_division=0)
+        w_prec, w_rec, w_f1, _ = precision_recall_fscore_support(y_true, preds, average="weighted", zero_division=0)
+        cm = confusion_matrix(y_true, preds, labels=[0, 1, 2])
         
         metrics_summary[name] = {
             "accuracy": float(acc),
@@ -210,7 +215,7 @@ def main():
     with open(report_path, "w") as f:
         f.write("# Multimodal Sentiment Analysis - Model Evaluation Report\n\n")
         f.write("## Executive Summary\n")
-        f.write("This report summarizes the performance of unimodal and multimodal attention-based fusion architectures trained on social media big data (`CardiffNLP TweetEval`, `MVSA-Single Image Sentiment`, and `Speech Emotion Recognition`).\n\n")
+        f.write("This report summarizes the performance of unimodal and multimodal attention-based fusion architectures trained on social media big data (`CardiffNLP TweetEval`, `FI (Flickr & Instagram) Emotion Dataset`, and the `RAVDESS` speech emotion corpus).\n\n")
         f.write("## Evaluation Metrics Summary\n\n")
         f.write("| Modality / Model | Accuracy | Macro Precision | Macro Recall | Macro F1 | Weighted F1 |\n")
         f.write("| :--- | :---: | :---: | :---: | :---: | :---: |\n")
